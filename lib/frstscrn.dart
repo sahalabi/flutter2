@@ -1,64 +1,138 @@
 import 'package:flutter/material.dart';
+import 'package:flutter2/scndscrn.dart';
 
 class Screen1 extends StatelessWidget {
-  const Screen1({super.key});
-
+  Screen1({super.key});
+  final myController = TextEditingController();
+final lastController = TextEditingController();
+  final userController = TextEditingController();
+  final emilController = TextEditingController();
+  final passController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.teal,
-        body: Column(
-          children: [
-            Center(
-              child: CircleAvatar(
-                radius: 100,
-                backgroundImage: NetworkImage(
-                    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6yqxWFuQOwKxTrTr6tFu7wJEAieJ_yR55kXGd5KUAZQ&s"),
+      backgroundColor: Colors.purple,
+      body: SingleChildScrollView(
+          child: Column(
+        children: [
+          Center(
+            child: CircleAvatar(
+              radius: 100,
+              backgroundImage: NetworkImage(
+                  "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRvKeZNmmenh5pRcFhnUBh9Bpm5IORcy63FqQ&s"),
+            ),
+          ),
+          Text('FIRST NAME'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: TextField(
+              controller: myController,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(),
+                hintText: 'Firstname',
               ),
             ),
-            Text(
-              'TIGOR SHROFF',
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          Text('LAST NAME'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: TextField(
+              controller:lastController,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(),
+                hintText: 'Last name',
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          Text('USER'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: TextField(
+              controller:userController ,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(),
+                hintText: 'Username',
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          Text('EMAILADDRESS'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: TextField(
+              controller: emilController,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                border: OutlineInputBorder(),
+                hintText: 'Emailaddress',
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 30,
+          ),
+          Text('PASSWORD'),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 50),
+            child: TextField(
+              controller:passController ,
+              decoration: InputDecoration(
+                fillColor: Colors.white,
+                filled: true,
+                suffixIcon: Icon(Icons.remove_red_eye_outlined),
+                border: OutlineInputBorder(),
+                hintText: 'Password',
+              ),
+            ),
+          ),
+
+          Text('i agree to the terms'),
+
+          TextButton(
+            onPressed: () {print('helloo');
+              print(myController.text);
+              print(lastController.text);
+              print(userController.text);
+              print(emilController.text);
+              print(passController.text);
+              Navigator.push(context,MaterialPageRoute(builder: (context)=> screen2()));
+              },
+          style: TextButton.styleFrom(
+              backgroundColor: Colors.pinkAccent,
+              shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(12),
+              ),
+          ),
+
+
+            child: Text(
+              "Register",
               style: TextStyle(
                 color: Colors.white,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
+                fontSize: 16,
+
               ),
             ),
-            Text(
-              'INDIAN ACTOR',
-              style: TextStyle(
-                color: Colors.deepOrangeAccent,
-                fontWeight: FontWeight.bold,
-                fontSize: 18,
-              ),
-            ),
-            Divider(
-              color: Colors.white,
-              thickness: 1,
-              indent: 0,
-              endIndent: 7,
-            ),
-            Container(
-              height: 100, 
-              color: Colors.white,
-              child: Row(
-                children: [
-                 Icon(Icons.call,color: Colors.teal,) ,
-                  Text( '+22996119142',style: TextStyle(color: Colors.teal,fontSize: 10),),
+          ),
 
 
-                ],
-              ),
-            ),
-            Container(
-              height: 100,
-              color: Colors.white,
-              child: Row(
-                children: [
-                Icon()
-
-            )
-          ],
-        ));
+        ],
+      )),
+    );
   }
 }
