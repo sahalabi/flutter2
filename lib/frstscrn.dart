@@ -102,22 +102,24 @@ final lastController = TextEditingController();
           ),
 
           Text('i agree to the terms'),
+        TextButton(
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(
+                builder: (context) => screen2(name: myController.text),));
 
-          TextButton(
-            onPressed: () {print('helloo');
               print(myController.text);
+
               print(lastController.text);
               print(userController.text);
-              print(emilController.text);
-              print(passController.text);
-              Navigator.push(context,MaterialPageRoute(builder: (context)=> screen2()));
-              },
-          style: TextButton.styleFrom(
-              backgroundColor: Colors.pinkAccent,
-              shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(12),
-              ),
-          ),
+               print(emilController.text);
+               print(passController.text);
+
+
+            },
+
+            //  print(userController.text);
+             // print(emilController.text);
+            //  print(passController.text);
 
 
             child: Text(

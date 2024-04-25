@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-class screen2 extends StatelessWidget {
-  const screen2({super.key});
-
+class screen2 extends StatelessWidget{
+   screen2({super.key,required this.name});
+   String name;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -17,7 +17,7 @@ class screen2 extends StatelessWidget {
               ),
             ),
             Text(
-              'TIGOR SHROFF',
+              name,
               style: TextStyle(
                 color: Colors.white,
                 fontWeight: FontWeight.bold,
